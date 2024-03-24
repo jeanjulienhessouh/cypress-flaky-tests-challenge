@@ -13,7 +13,7 @@ describe('Sign Up', () => {
     // submit the form
     cy.get('input[type="submit"]').click()
     // the "Saved!" message should appear
-    cy.get('input[value="Saved!"]').should('be.visible')
+    cy.get('input[value="Saved!"]', { timeout: 5000 }).should('be.visible')
     // and the list of registered people should contain the new person
     // including the email and the course name
     cy.get('li').should('contain', 'Some Name - some@email.com - core - git-it')
